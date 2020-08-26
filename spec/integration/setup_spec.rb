@@ -3,7 +3,7 @@ RSpec.describe "`bartab setup` command", type: :cli do
     output = `bartab help setup`
     expected_output = <<-OUT
 Usage:
-  bartab setup
+  bartab setup [BARTAB]
 
 Options:
   -h, [--help], [--no-help]  # Display usage information
