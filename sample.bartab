@@ -1,0 +1,18 @@
+---
+description: Spotify Installation
+
+tab:
+  - download:
+      description: Downloading Spotify
+      source: https://download.scdn.co/SpotifyInstaller.zip
+      destination: /Users/rootedbox/Downloads/SpotifyInstaller.zip
+  - copy:
+      description: Copy Spotify To Home
+      source: /Users/rootedbox/Downloads/SpotifyInstaller.zip
+      destination: /Users/rootedbox/SpotifyInstaller.zip
+  - install:
+      description: Install Unzip
+      package: Unzip
+  - execute:
+      description: Unzip Spotify
+      command: unzip /Users/rootedbox/SpotifyInstaller.zip
