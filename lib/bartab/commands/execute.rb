@@ -11,14 +11,14 @@ module Bartab
         @description = description
         @command = command
 
-        @executor = TTY::Command.new(printer: :null)
+        @executor = TTY::Command.new(printer: :null, pty: true)
         super
       end
 
       def perform
+        #puts "\r\n"
         out, error = @executor.run!(@command)
-        puts "\r\n"
-        puts out
+        #puts out
 
         !!error
       end

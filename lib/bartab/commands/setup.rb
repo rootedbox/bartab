@@ -36,10 +36,11 @@ module Bartab
         operation = tab_operation.keys[0]
         params = tab_operation[operation]
 
-        eval(execute_string(operation, params))
+        instance_eval(execute_string(operation, params))
       end
 
       def execute_string(operation, params)
+        puts params_to_string(params)
         "Bartab::Commands::#{operation.capitalize}.new(#{params_to_string(params)}).execute"
       end
 
@@ -50,6 +51,8 @@ module Bartab
           strings << "#{key}: \"#{value}\""
         end
 
+        #puts @spinner.class.instance_methods
+        strings << "parent_spinner: @spinner"
         strings.join(",")
       end
     end

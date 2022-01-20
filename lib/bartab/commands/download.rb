@@ -7,13 +7,13 @@ require 'tty/file'
 module Bartab
   module Commands
     class Download < Bartab::SpinnerCommand
-      def initialize(description: nil, source:, destination:)
-        @description = description
-        @source = source
-        @destination = destination
-
-        super
-      end
+      # def initialize(description: nil, source:, destination:)
+      #   @description = description
+      #   @source = source
+      #   @destination = destination
+      #
+      #   super
+      # end
 
       def perform
         TTY::File.download_file(@source, @destination)
